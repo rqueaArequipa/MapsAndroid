@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".MainActivity" >
+
+	<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+	          xmlns:map="http://schemas.android.com/apk/res-auto"
+	          xmlns:tools="http://schemas.android.com/tools"
+	          android:id="@+id/map"
+	          android:name="com.google.android.gms.maps.SupportMapFragment"
+	          android:layout_width="match_parent"
+	          android:layout_height="match_parent"
+	          tools:context=".MapsActivity" />
+	<TextView
+		android:id="@+id/lbltipo"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentTop="true"
+		android:background="@android:color/black"
+		android:text="Tipo de mapa"
+		android:textColor="@android:color/white"
+		android:textSize="18sp" />
+
+	<Spinner
+		android:id="@+id/spnTipoMapa"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentTop="true"
+		android:layout_toRightOf="@+id/lbltipo"
+		android:background="@color/white"
+		android:entries="@array/lista_tipos_mapas" />
+
+
+	<SearchView
+		android:id="@+id/buscar"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/spnTipoMapa"
+		android:background="@color/white"
+		android:queryHint="Buscar..."
+		android:textColorHint="#808080"
+		android:layout_marginTop="28dp" />
+
+	<Button android:id="@+id/btnMoverCamara"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentBottom="true"
+	        android:text="Ir a Plaza de Armas"
+	        android:onClick="moverCamara"
+	        tools:ignore="OnClick"
+		/>
+
+	<Button android:id="@+id/btnAddMarcador"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentBottom="true"
+	        android:layout_toRightOf="@+id/btnMoverCamara"
+	        android:text="Crear Marcador"
+	        android:onClick="agregarMarcador"
+	        tools:ignore="OnClick"
+		/>
+
+</RelativeLayout>
